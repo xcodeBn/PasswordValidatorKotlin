@@ -2,6 +2,7 @@ plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
     id("maven-publish")
+    id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.16.3"
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -14,6 +15,19 @@ kotlin {
 }
 dependencies {
     testImplementation(kotlin("test"))
+}
+
+apiValidation {
+    // Validate only public API
+    publicMarkers.add("com.pisces.xcodebn.passwordvalidator.PasswordValidator")
+    
+    // Ignore internal classes from validation
+    ignoredClasses.addAll(listOf(
+        // Add any internal classes you don't want to track
+    ))
+    
+    // Optional: Configure for specific packages
+    validationDisabled = false
 }
 
 publishing {
