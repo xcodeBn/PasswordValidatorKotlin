@@ -1,0 +1,101 @@
+public final class com/pisces/xcodebn/passwordvalidator/DigitRule : com/pisces/xcodebn/passwordvalidator/PasswordRule {
+	public fun <init> ()V
+	public fun validate-IoAF18A (Ljava/lang/String;)Ljava/lang/Object;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/MinLengthRule : com/pisces/xcodebn/passwordvalidator/PasswordRule {
+	public fun <init> ()V
+	public fun <init> (I)V
+	public synthetic fun <init> (IILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun validate-IoAF18A (Ljava/lang/String;)Ljava/lang/Object;
+}
+
+public abstract class com/pisces/xcodebn/passwordvalidator/PasswordError : java/lang/Throwable {
+	public final fun getDescription ()Ljava/lang/String;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordError$Custom : com/pisces/xcodebn/passwordvalidator/PasswordError {
+	public fun <init> (Ljava/lang/String;)V
+	public final fun component1 ()Ljava/lang/String;
+	public final fun copy (Ljava/lang/String;)Lcom/pisces/xcodebn/passwordvalidator/PasswordError$Custom;
+	public static synthetic fun copy$default (Lcom/pisces/xcodebn/passwordvalidator/PasswordError$Custom;Ljava/lang/String;ILjava/lang/Object;)Lcom/pisces/xcodebn/passwordvalidator/PasswordError$Custom;
+	public fun equals (Ljava/lang/Object;)Z
+	public fun getMessage ()Ljava/lang/String;
+	public fun hashCode ()I
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordError$MissingDigit : com/pisces/xcodebn/passwordvalidator/PasswordError {
+	public static final field INSTANCE Lcom/pisces/xcodebn/passwordvalidator/PasswordError$MissingDigit;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordError$MissingSpecialChar : com/pisces/xcodebn/passwordvalidator/PasswordError {
+	public static final field INSTANCE Lcom/pisces/xcodebn/passwordvalidator/PasswordError$MissingSpecialChar;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordError$MissingUppercase : com/pisces/xcodebn/passwordvalidator/PasswordError {
+	public static final field INSTANCE Lcom/pisces/xcodebn/passwordvalidator/PasswordError$MissingUppercase;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordError$TooShort : com/pisces/xcodebn/passwordvalidator/PasswordError {
+	public static final field INSTANCE Lcom/pisces/xcodebn/passwordvalidator/PasswordError$TooShort;
+}
+
+public abstract interface class com/pisces/xcodebn/passwordvalidator/PasswordRule {
+	public abstract fun validate-IoAF18A (Ljava/lang/String;)Ljava/lang/Object;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordValidator {
+	public static final field Companion Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Companion;
+	public synthetic fun <init> (Ljava/util/List;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun validate (Ljava/lang/String;)Lcom/pisces/xcodebn/passwordvalidator/ValidationResult;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder {
+	public fun <init> ()V
+	public final fun addRule (Lcom/pisces/xcodebn/passwordvalidator/PasswordRule;)Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;
+	public final fun build ()Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator;
+	public final fun minLength (I)Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;
+	public final fun requireDigit ()Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;
+	public final fun requireSpecialCharacter (Ljava/lang/String;)Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;
+	public static synthetic fun requireSpecialCharacter$default (Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;Ljava/lang/String;ILjava/lang/Object;)Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;
+	public final fun requireUppercase ()Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/PasswordValidator$Companion {
+	public final fun builder ()Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator$Builder;
+	public final fun defaultRules ()Lcom/pisces/xcodebn/passwordvalidator/PasswordValidator;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/SpecialCharacterRule : com/pisces/xcodebn/passwordvalidator/PasswordRule {
+	public fun <init> ()V
+	public fun <init> (Ljava/lang/String;)V
+	public synthetic fun <init> (Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public fun validate-IoAF18A (Ljava/lang/String;)Ljava/lang/Object;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/UppercaseRule : com/pisces/xcodebn/passwordvalidator/PasswordRule {
+	public fun <init> ()V
+	public fun validate-IoAF18A (Ljava/lang/String;)Ljava/lang/Object;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/ValidationResult {
+	public static final field Companion Lcom/pisces/xcodebn/passwordvalidator/ValidationResult$Companion;
+	public fun <init> (ZLjava/util/List;)V
+	public synthetic fun <init> (ZLjava/util/List;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+	public final fun component1 ()Z
+	public final fun component2 ()Ljava/util/List;
+	public final fun copy (ZLjava/util/List;)Lcom/pisces/xcodebn/passwordvalidator/ValidationResult;
+	public static synthetic fun copy$default (Lcom/pisces/xcodebn/passwordvalidator/ValidationResult;ZLjava/util/List;ILjava/lang/Object;)Lcom/pisces/xcodebn/passwordvalidator/ValidationResult;
+	public fun equals (Ljava/lang/Object;)Z
+	public final fun getErrors ()Ljava/util/List;
+	public fun hashCode ()I
+	public final fun isValid ()Z
+	public fun toString ()Ljava/lang/String;
+}
+
+public final class com/pisces/xcodebn/passwordvalidator/ValidationResult$Companion {
+	public final fun failure (Ljava/util/List;)Lcom/pisces/xcodebn/passwordvalidator/ValidationResult;
+	public final fun success ()Lcom/pisces/xcodebn/passwordvalidator/ValidationResult;
+}
+

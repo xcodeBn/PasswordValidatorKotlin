@@ -18,12 +18,10 @@ dependencies {
 }
 
 apiValidation {
-    // Validate only public API
-    publicMarkers.add("com.pisces.xcodebn.passwordvalidator.PasswordValidator")
-    
+
     // Ignore internal classes from validation
     ignoredClasses.addAll(listOf(
-        // Add any internal classes you don't want to track
+
     ))
     
     // Optional: Configure for specific packages
