@@ -35,7 +35,7 @@ publishing {
             
             groupId = "com.pisces.xcodebn"
             artifactId = "password-validator"
-            version = "1.0.0"
+            version = "1.0.1"
             
             pom {
                 name.set("Password Validator")
