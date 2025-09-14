@@ -16,6 +16,8 @@ A modular, extensible password validation library for Kotlin with customizable r
 
 ## Installation
 
+### Gradle (Kotlin DSL)
+
 Add JitPack repository to your project's `settings.gradle.kts`:
 
 ```kotlin
@@ -32,6 +34,49 @@ Add the dependency to your module's `build.gradle.kts`:
 dependencies {
     implementation("com.github.xcodeBn:PasswordValidatorKotlin:1.0.0")
 }
+```
+
+### Gradle (Groovy)
+
+Add JitPack repository to your project's `settings.gradle`:
+
+```groovy
+dependencyResolutionManagement {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Add the dependency to your module's `build.gradle`:
+
+```groovy
+dependencies {
+    implementation 'com.github.xcodeBn:PasswordValidatorKotlin:1.0.0'
+}
+```
+
+### Maven
+
+Add JitPack repository to your `pom.xml`:
+
+```xml
+<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+Add the dependency:
+
+```xml
+<dependency>
+    <groupId>com.github.xcodeBn</groupId>
+    <artifactId>PasswordValidatorKotlin</artifactId>
+    <version>1.0.0</version>
+</dependency>
 ```
 
 ## Quick Start
