@@ -2,6 +2,7 @@ plugins {
     id("java-library")
     alias(libs.plugins.jetbrains.kotlin.jvm)
     id("maven-publish")
+    id("org.jetbrains.kotlinx.binary-compatibility-validator") version "0.16.3"
 }
 java {
     sourceCompatibility = JavaVersion.VERSION_11
@@ -16,6 +17,17 @@ dependencies {
     testImplementation(kotlin("test"))
 }
 
+apiValidation {
+
+    // Ignore internal classes from validation
+    ignoredClasses.addAll(listOf(
+
+    ))
+    
+    // Optional: Configure for specific packages
+    validationDisabled = false
+}
+
 publishing {
     publications {
         create<MavenPublication>("maven") {
@@ -23,7 +35,7 @@ publishing {
             
             groupId = "com.pisces.xcodebn"
             artifactId = "password-validator"
-            version = "1.0.0"
+            version = "1.0.1"
             
             pom {
                 name.set("Password Validator")
